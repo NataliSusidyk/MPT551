@@ -1,0 +1,26 @@
+{
+  "name": "webtext",
+  "version": "0.0.1",
+  "description": "��#\u0000 \u0000M\u0000P\u0000T\u00005\u00005\u00001\u0000",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "scripts": {
+    "build": "webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NataliSusidyk/MPT551.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NataliSusidyk/MPT551/issues"
+  },
+  "homepage": "https://github.com/NataliSusidyk/MPT551#readme"
+}
