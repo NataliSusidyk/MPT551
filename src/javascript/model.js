@@ -1,25 +1,3 @@
-/* ---------------------------- begin view ----------------------------- */
-	
-	var view = {
-
-		showQuestion: function (n) {
-			this.showError('');
-			var el = document.getElementById("showQuestion");
-			el.innerHTML = n;
-		}, 
-
-		showError: function (error){
-			var el = document.getElementById("showError");
-			el.innerHTML = error;
-		}
-
-
-	};
-
-/* ----------------------------- end view ------------------------------ */
-
-	
-
 /* ---------------------------- begin model ---------------------------- */
 	
 	var model = {
@@ -42,14 +20,17 @@
 			{
 				text: 'Як тебе зати?',
 				hangler: function(input) {
-					var result = {};
-					if (input){
-						result.ok = true;
-					} else {
+					 var  str = /[0-9-!№#$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/;
+					 var result = {};
+					 if(str.test(input)){
 						result.ok = false;
 						result.errorText = 'Ти ж не робот, напиши нормально.';
+					} else { 
+						result.ok = true;
 					}
-					return result;
+						 
+					 return result;
+					
 				}
 			}, 
 			{
@@ -98,56 +79,3 @@
 	};
 
 /* ----------------------------- end model ----------------------------- */
-
-
-/* -------------------------- begin controller ------------------------- */
-	
-	var controller = {
-
-		init: function () {
-			view.showQuestion(model.getCurrentQuestion());
-		},
-
-		handleClick: function () {
-			var mainInput = document.getElementById('mainInput').value;
-			var result = model.calculate(mainInput);
-			if (result.ok){
-				model.goToNextQuestion();
-				view.showQuestion(model.getCurrentQuestion());
-			} else {
-				view.showError(result.errorText);
-			}
-		}
-
-	};
-
-/* --------------------------- end controller -------------------------- */
-
-
-
-
-/* --------------------- anonymous initialize function ----------------- */
-	(function() { 
-
-		var app = {
-
-			init: function () {
-				this.main();
-				this.event();
-			},
-
-			main: function () {
-				controller.init();
-			},
-
-			event: function () {
-				var el = document.getElementById("calcUser");
-				el.onclick = controller.handleClick;
-			}
-
-		};
-		
-		app.init();
-
-	}());
-/* --------------------- anonymous initialize function ----------------- */
