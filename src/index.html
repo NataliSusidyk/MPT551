@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="main.css">
-<title>PM-551</title> 
+	<meta charset="UTF-8">
+	<title>Мій перший веб додаток</title>
+	<style>
+	body{
+			margin-top: 100px;
+			text-align: center;
+			font-size: 24px;
+		}
+	</style>
 </head>
 <body>
-	<div id = "app">
-<div id = "text">
-<button id="elem" onclick ="wordout()">Log</button>
-</div>
-</div>
+	<p>Мій перший веб додаток</p>
+	<br/>
+	<br/>
+	<div id="showQuestion"></div>
+	<input type="text" id="mainInput">
+	<div><button id="calcUser">Далі</button></div>
+	<div style="color:red;" id="showError"></div>
+
+	<script src="code.js" ></script>
 </body>
 </html>
