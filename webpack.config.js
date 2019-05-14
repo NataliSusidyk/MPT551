@@ -1,10 +1,9 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+var path = require('path');
+ 
 module.exports = {
-  entry: './src/javascript/index.js',
-  plugins: [
- 	 new HtmlWebpackPlugin({template:  './src/index.html' }),
- 	 new CopyPlugin([ { from: 'src/css/main.css', to: '' }])
-    ],
-    watch: true
+  entry: './client/src/app.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
 };
